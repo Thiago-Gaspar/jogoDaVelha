@@ -67,25 +67,40 @@
 		5525BE24262B24E0002F7A25 /* jogoDaVelha */ = {
 			isa = PBXGroup;
 			children = (
+				5525BE25262B24E0002F7A25 /* AppDelegate.swift */,
+				5525BE27262B24E0002F7A25 /* SceneDelegate.swift */,
+				5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */,
+				55AECCC3262F903900C880B9 /* Resources */,
+				55AECCC2262F900B00C880B9 /* Controllers */,
 				55E30F40262B9BA20046D9BC /* Models */,
 				55E30F3F262B9B990046D9BC /* Components */,
 				55E30F3E262B9B910046D9BC /* Views */,
-				5525BE25262B24E0002F7A25 /* AppDelegate.swift */,
-				5525BE27262B24E0002F7A25 /* SceneDelegate.swift */,
-				5525BE29262B24E0002F7A25 /* LoginVC.swift */,
-				5525BE2B262B24E0002F7A25 /* Main.storyboard */,
-				5525BE31262B24E1002F7A25 /* Assets.xcassets */,
-				5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */,
-				5525BE36262B24E1002F7A25 /* Info.plist */,
-				5525BE2E262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld */,
-				55E30F3B262B3BBB0046D9BC /* LoginView.swift */,
 			);
 			path = jogoDaVelha;
+			sourceTree = "<group>";
+		};
+		55AECCC2262F900B00C880B9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5525BE29262B24E0002F7A25 /* LoginVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		55AECCC3262F903900C880B9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5525BE31262B24E1002F7A25 /* Assets.xcassets */,
+				5525BE36262B24E1002F7A25 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		55E30F3E262B9B910046D9BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5525BE2B262B24E0002F7A25 /* Main.storyboard */,
+				55E30F3B262B3BBB0046D9BC /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -100,6 +115,7 @@
 		55E30F40262B9BA20046D9BC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5525BE2E262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,7 +405,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97AT3DUA4M;
-				INFOPLIST_FILE = jogoDaVelha/Info.plist;
+				INFOPLIST_FILE = jogoDaVelha/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,7 +426,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97AT3DUA4M;
-				INFOPLIST_FILE = jogoDaVelha/Info.plist;
+				INFOPLIST_FILE = jogoDaVelha/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
