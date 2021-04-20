@@ -3,17 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5525BE26262B24E0002F7A25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BE25262B24E0002F7A25 /* AppDelegate.swift */; };
 		5525BE28262B24E0002F7A25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BE27262B24E0002F7A25 /* SceneDelegate.swift */; };
-		5525BE2A262B24E0002F7A25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BE29262B24E0002F7A25 /* ViewController.swift */; };
+		5525BE2A262B24E0002F7A25 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525BE29262B24E0002F7A25 /* LoginVC.swift */; };
 		5525BE2D262B24E0002F7A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5525BE2B262B24E0002F7A25 /* Main.storyboard */; };
 		5525BE30262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5525BE2E262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld */; };
 		5525BE32262B24E1002F7A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5525BE31262B24E1002F7A25 /* Assets.xcassets */; };
 		5525BE35262B24E1002F7A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */; };
+		55E30F3C262B3BBB0046D9BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E30F3B262B3BBB0046D9BC /* LoginView.swift */; };
 		563A110F7225B1DEEA67DBD7 /* Pods_jogoDaVelha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A8783D282829E3967DC7E0 /* Pods_jogoDaVelha.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +22,13 @@
 		5525BE22262B24E0002F7A25 /* jogoDaVelha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jogoDaVelha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5525BE25262B24E0002F7A25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5525BE27262B24E0002F7A25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5525BE29262B24E0002F7A25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5525BE29262B24E0002F7A25 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5525BE2C262B24E0002F7A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5525BE2F262B24E0002F7A25 /* jogoDaVelha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = jogoDaVelha.xcdatamodel; sourceTree = "<group>"; };
 		5525BE31262B24E1002F7A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5525BE34262B24E1002F7A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5525BE36262B24E1002F7A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55E30F3B262B3BBB0046D9BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		72636415C14C9C19105DCAA0 /* Pods-jogoDaVelha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jogoDaVelha.debug.xcconfig"; path = "Target Support Files/Pods-jogoDaVelha/Pods-jogoDaVelha.debug.xcconfig"; sourceTree = "<group>"; };
 		8CE081C3D1A8378AED79CC89 /* Pods-jogoDaVelha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jogoDaVelha.release.xcconfig"; path = "Target Support Files/Pods-jogoDaVelha/Pods-jogoDaVelha.release.xcconfig"; sourceTree = "<group>"; };
 		C8A8783D282829E3967DC7E0 /* Pods_jogoDaVelha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jogoDaVelha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,16 +67,41 @@
 		5525BE24262B24E0002F7A25 /* jogoDaVelha */ = {
 			isa = PBXGroup;
 			children = (
+				55E30F40262B9BA20046D9BC /* Models */,
+				55E30F3F262B9B990046D9BC /* Components */,
+				55E30F3E262B9B910046D9BC /* Views */,
 				5525BE25262B24E0002F7A25 /* AppDelegate.swift */,
 				5525BE27262B24E0002F7A25 /* SceneDelegate.swift */,
-				5525BE29262B24E0002F7A25 /* ViewController.swift */,
+				5525BE29262B24E0002F7A25 /* LoginVC.swift */,
 				5525BE2B262B24E0002F7A25 /* Main.storyboard */,
 				5525BE31262B24E1002F7A25 /* Assets.xcassets */,
 				5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */,
 				5525BE36262B24E1002F7A25 /* Info.plist */,
 				5525BE2E262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld */,
+				55E30F3B262B3BBB0046D9BC /* LoginView.swift */,
 			);
 			path = jogoDaVelha;
+			sourceTree = "<group>";
+		};
+		55E30F3E262B9B910046D9BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		55E30F3F262B9B990046D9BC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		55E30F40262B9BA20046D9BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5F0EB9460A7EB1AAA9756283 /* Pods */ = {
@@ -83,7 +110,6 @@
 				72636415C14C9C19105DCAA0 /* Pods-jogoDaVelha.debug.xcconfig */,
 				8CE081C3D1A8378AED79CC89 /* Pods-jogoDaVelha.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,8 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5525BE30262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld in Sources */,
-				5525BE2A262B24E0002F7A25 /* ViewController.swift in Sources */,
+				5525BE2A262B24E0002F7A25 /* LoginVC.swift in Sources */,
 				5525BE26262B24E0002F7A25 /* AppDelegate.swift in Sources */,
+				55E30F3C262B3BBB0046D9BC /* LoginView.swift in Sources */,
 				5525BE28262B24E0002F7A25 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
