@@ -71,9 +71,9 @@
 				5525BE27262B24E0002F7A25 /* SceneDelegate.swift */,
 				5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */,
 				55AECCC3262F903900C880B9 /* Resources */,
-				55AECCC2262F900B00C880B9 /* Controllers */,
-				55E30F40262B9BA20046D9BC /* Models */,
 				55E30F3F262B9B990046D9BC /* Components */,
+				55E30F40262B9BA20046D9BC /* Models */,
+				55AECCC2262F900B00C880B9 /* Controllers */,
 				55E30F3E262B9B910046D9BC /* Views */,
 			);
 			path = jogoDaVelha;

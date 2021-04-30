@@ -16,10 +16,11 @@ class LoginView: UIView {
      **  MARK: Variables Declaration
      **
      **********************************************************************************/
+        
+    var logoImageView : UIImageView!
     
-    var scrollView : UIScrollView!
+    var hashtagLabel : UILabel!
     
-    var logoImageView : UIButton!
     
     /* ******************************************************************************
      **
@@ -30,29 +31,32 @@ class LoginView: UIView {
     init(view: UIView, parent: UIViewController) {
         super.init(frame: view.frame);
         
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .white
         
         let width = view.frame.size.width
         let height = view.frame.size.height
-        
+       
         var yPosition = height*0.1
-        
-        //------------------------- Scroll View -----------------------------
-        
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        scrollView.isScrollEnabled = true
-        scrollView.backgroundColor = .white
-        
-        view.addSubview(scrollView)
         
         //------------------------- Logo Image Label -----------------------------
 
-        logoImageView = UIButton(frame: CGRect(x: 0, y: height*0.1, width: width*0.3, height: 60))
-        logoImageView.backgroundColor = .green
-        logoImageView.layer.cornerRadius = logoImageView.frame.height/2
+        logoImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: 100, height: 120))
+        logoImageView.image = UIImage(named: "mocLogo")
+        logoImageView.contentMode = .scaleAspectFit
         logoImageView.center.x = width/2
         
-        scrollView.addSubview(logoImageView)
+        view.addSubview(logoImageView)
+        
+        yPosition = yPosition + logoImageView.frame.height + 20
+        //------------------------- Hashtag Label -----------------------------
+        
+        hashtagLabel = UILabel(frame: CGRect(x: 0, y: yPosition, width: width*0.5, height: 50))
+        hashtagLabel.text = "Jogo da Velha"
+        hashtagLabel.textColor = .black
+        hashtagLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        hashtagLabel.center.x = width/2
+        
+        view.addSubview(hashtagLabel)
         
     }
     
