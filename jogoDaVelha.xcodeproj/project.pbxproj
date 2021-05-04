@@ -67,9 +67,12 @@
 		5525BE24262B24E0002F7A25 /* jogoDaVelha */ = {
 			isa = PBXGroup;
 			children = (
+				5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */,
 				5525BE25262B24E0002F7A25 /* AppDelegate.swift */,
 				5525BE27262B24E0002F7A25 /* SceneDelegate.swift */,
-				5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */,
+				55FCB1C42640B6790089B4B8 /* Translate */,
+				55FCB1C32640B6600089B4B8 /* Extensions */,
+				55FCB1C22640B64A0089B4B8 /* Cells */,
 				55AECCC3262F903900C880B9 /* Resources */,
 				55E30F3F262B9B990046D9BC /* Components */,
 				55E30F40262B9BA20046D9BC /* Models */,
@@ -118,6 +121,27 @@
 				5525BE2E262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		55FCB1C22640B64A0089B4B8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		55FCB1C32640B6600089B4B8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		55FCB1C42640B6790089B4B8 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Translate;
 			sourceTree = "<group>";
 		};
 		5F0EB9460A7EB1AAA9756283 /* Pods */ = {
