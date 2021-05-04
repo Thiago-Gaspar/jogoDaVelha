@@ -15,6 +15,12 @@
 		5525BE32262B24E1002F7A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5525BE31262B24E1002F7A25 /* Assets.xcassets */; };
 		5525BE35262B24E1002F7A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */; };
 		55E30F3C262B3BBB0046D9BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E30F3B262B3BBB0046D9BC /* LoginView.swift */; };
+		55FCB1C62640CB170089B4B8 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1C52640CB170089B4B8 /* UIFont+Extension.swift */; };
+		55FCB1C82640CB3F0089B4B8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1C72640CB3F0089B4B8 /* UIColor+Extension.swift */; };
+		55FCB1CA2640CB9E0089B4B8 /* Strings+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1C92640CB9E0089B4B8 /* Strings+Extension.swift */; };
+		55FCB1CC2640CBC00089B4B8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1CB2640CBC00089B4B8 /* CardView.swift */; };
+		55FCB1CE2640CBDB0089B4B8 /* FALSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1CD2640CBDB0089B4B8 /* FALSpinner.swift */; };
+		55FCB1D02640CBEA0089B4B8 /* GenericAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1CF2640CBEA0089B4B8 /* GenericAlert.swift */; };
 		563A110F7225B1DEEA67DBD7 /* Pods_jogoDaVelha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A8783D282829E3967DC7E0 /* Pods_jogoDaVelha.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +35,12 @@
 		5525BE34262B24E1002F7A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5525BE36262B24E1002F7A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55E30F3B262B3BBB0046D9BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		55FCB1C52640CB170089B4B8 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+Extension.swift"; path = "../../../../../UIFont+Extension.swift"; sourceTree = "<group>"; };
+		55FCB1C72640CB3F0089B4B8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		55FCB1C92640CB9E0089B4B8 /* Strings+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Extension.swift"; sourceTree = "<group>"; };
+		55FCB1CB2640CBC00089B4B8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		55FCB1CD2640CBDB0089B4B8 /* FALSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FALSpinner.swift; sourceTree = "<group>"; };
+		55FCB1CF2640CBEA0089B4B8 /* GenericAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAlert.swift; sourceTree = "<group>"; };
 		72636415C14C9C19105DCAA0 /* Pods-jogoDaVelha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jogoDaVelha.debug.xcconfig"; path = "Target Support Files/Pods-jogoDaVelha/Pods-jogoDaVelha.debug.xcconfig"; sourceTree = "<group>"; };
 		8CE081C3D1A8378AED79CC89 /* Pods-jogoDaVelha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jogoDaVelha.release.xcconfig"; path = "Target Support Files/Pods-jogoDaVelha/Pods-jogoDaVelha.release.xcconfig"; sourceTree = "<group>"; };
 		C8A8783D282829E3967DC7E0 /* Pods_jogoDaVelha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jogoDaVelha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +123,9 @@
 		55E30F3F262B9B990046D9BC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				55FCB1CB2640CBC00089B4B8 /* CardView.swift */,
+				55FCB1CD2640CBDB0089B4B8 /* FALSpinner.swift */,
+				55FCB1CF2640CBEA0089B4B8 /* GenericAlert.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -133,6 +148,9 @@
 		55FCB1C32640B6600089B4B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				55FCB1C52640CB170089B4B8 /* UIFont+Extension.swift */,
+				55FCB1C72640CB3F0089B4B8 /* UIColor+Extension.swift */,
+				55FCB1C92640CB9E0089B4B8 /* Strings+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,9 +293,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FCB1C82640CB3F0089B4B8 /* UIColor+Extension.swift in Sources */,
+				55FCB1CC2640CBC00089B4B8 /* CardView.swift in Sources */,
+				55FCB1C62640CB170089B4B8 /* UIFont+Extension.swift in Sources */,
 				5525BE30262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld in Sources */,
 				5525BE2A262B24E0002F7A25 /* LoginVC.swift in Sources */,
+				55FCB1CA2640CB9E0089B4B8 /* Strings+Extension.swift in Sources */,
+				55FCB1D02640CBEA0089B4B8 /* GenericAlert.swift in Sources */,
 				5525BE26262B24E0002F7A25 /* AppDelegate.swift in Sources */,
+				55FCB1CE2640CBDB0089B4B8 /* FALSpinner.swift in Sources */,
 				55E30F3C262B3BBB0046D9BC /* LoginView.swift in Sources */,
 				5525BE28262B24E0002F7A25 /* SceneDelegate.swift in Sources */,
 			);
