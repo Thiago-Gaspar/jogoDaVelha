@@ -24,7 +24,7 @@ class LoginView: UIView {
     var emailTextField : UITextField!
     
     var passwordTextField : UITextField!
-    
+        
     var uiSwitch : UISwitch!
     
     var stayLoggedLabel : UILabel!
@@ -106,7 +106,28 @@ class LoginView: UIView {
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password".localized,attributes:[NSAttributedString.Key.foregroundColor:UIColor.black])
         
         view.addSubview(passwordTextField)
+        
+        yPosition = yPosition + passwordTextField.frame.height + 10
   
+        //------------------------- Ui Switch -----------------------------
+
+        uiSwitch = UISwitch(frame: CGRect(x: 0, y: yPosition, width: 30, height: 20))
+        uiSwitch.backgroundColor = .clear
+        uiSwitch.isOn = true
+        uiSwitch.frame.origin.x = passwordTextField.frame.origin.x
+        
+        view.addSubview(uiSwitch)
+        
+        //------------------------- Login Button -----------------------------
+
+        loginButton = UIButton(frame: CGRect(x: 0, y: yPosition, width: width*0.3, height: 40))
+        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.backgroundColor = .blue
+        loginButton.layer.cornerRadius = loginButton.frame.height/2
+        loginButton.center.x = width/2
+        
+        view.addSubview(loginButton)
     }
     
     required init?(coder: NSCoder) {
