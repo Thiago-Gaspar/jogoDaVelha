@@ -30,7 +30,19 @@ class HomeVC: UIViewController {
         
         //------------------------------ Targets --------------------------//
     
+        //--------------------- Changing navigation Bar infos --------------------------------
         
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+        
+        //-------------------------------- Navigation Bar ---------------------------------------
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = UIColor.black
         
     }
     
