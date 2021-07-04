@@ -21,11 +21,15 @@ class LoginView: UIView {
     
     var hashtagLabel : UILabel!
     
+    var emailLabel : UILabel!
+    
     var emailTextField : UITextField!
+    
+    var passwordLabel : UILabel!
     
     var passwordTextField : UITextField!
         
-    var uiSwitch : UISwitch!
+    var stayLoggedSwitch : UISwitch!
     
     var stayLoggedLabel : UILabel!
     
@@ -47,7 +51,7 @@ class LoginView: UIView {
        
         var yPosition = height*0.1
         
-        //------------------------- Logo Image Label -----------------------------
+        //------------------------- Logo Image View -----------------------------
 
         logoImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: 100, height: 120))
         logoImageView.image = UIImage(named: "mocLogo")
@@ -63,66 +67,103 @@ class LoginView: UIView {
         hashtagLabel = UILabel(frame: CGRect(x: 0, y: yPosition, width: width*0.5, height: 50))
         hashtagLabel.text = "Jogo da Velha"
         hashtagLabel.textColor = .black
-        hashtagLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        hashtagLabel.font = UIFont.defaultFont(size: 28, type: .bold)
         hashtagLabel.center.x = width/2
         
         view.addSubview(hashtagLabel)
         
         yPosition = yPosition + hashtagLabel.frame.height + 20
         
+        //------------------------- Email Label -----------------------------
+        
+        emailLabel = UILabel(frame: CGRect(x: width*0.05, y: yPosition, width: 0, height: 0))
+        emailLabel.text = "email"
+        emailLabel.textColor = .blue
+        emailLabel.font = UIFont.defaultFont(size: 14, type: .regular)
+        emailLabel.sizeToFit()
+        
+        view.addSubview(emailLabel)
+        
+        yPosition = yPosition + emailLabel.frame.height + 5
+        
         //------------------------- Email Text Field -----------------------------
 
-        emailTextField = UITextField(frame: CGRect(x: 0, y: yPosition, width: width*0.9, height: 40))
-        emailTextField.backgroundColor = .lightGray
+        emailTextField = UITextField(frame: CGRect(x: 0, y: yPosition, width: width*0.9, height: 50))
+        emailTextField.backgroundColor = .gray
         emailTextField.textColor = .black
-        emailTextField.font = UIFont.defaultFont(size: 18, type: .regular)
-        emailTextField.layer.cornerRadius = emailTextField.frame.height/2
+        emailTextField.font = UIFont.defaultFont(size: 16, type: .regular)
+        emailTextField.layer.cornerRadius = 12
         emailTextField.center.x = width/2
         emailTextField.autocapitalizationType = .none
         emailTextField.autocorrectionType = .no
         emailTextField.keyboardType = .emailAddress
-        emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: emailTextField.frame.height))
+        emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: emailTextField.frame.height))
         emailTextField.leftViewMode = UITextField.ViewMode.always
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email".localized,attributes:[NSAttributedString.Key.foregroundColor:UIColor.black])
         
         view.addSubview(emailTextField)
         
         yPosition = yPosition + emailTextField.frame.height + 15
         
+        //------------------------- Password Label -----------------------------
+        
+        passwordLabel = UILabel(frame: CGRect(x: width*0.05, y: yPosition, width: 0, height: 0))
+        passwordLabel.text = "senha"
+        passwordLabel.textColor = .blue
+        passwordLabel.font = UIFont.defaultFont(size: 14, type: .regular)
+        passwordLabel.sizeToFit()
+        
+        view.addSubview(passwordLabel)
+        
+        yPosition = yPosition + passwordLabel.frame.height + 5
+        
         //------------------------- Password Text Field -----------------------------
 
-        passwordTextField = UITextField(frame: CGRect(x: 0, y: yPosition, width: width*0.9, height: 40))
-        passwordTextField.backgroundColor = .lightGray
+        passwordTextField = UITextField(frame: CGRect(x: 0, y: yPosition, width: width*0.9, height: 50))
+        passwordTextField.backgroundColor = .gray
         passwordTextField.textColor = .black
         passwordTextField.font = UIFont.defaultFont(size: 18, type: .regular)
-        passwordTextField.layer.cornerRadius = passwordTextField.frame.height/2
+        passwordTextField.layer.cornerRadius = 12
         passwordTextField.center.x = width/2
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
         passwordTextField.keyboardType = .default
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: passwordTextField.frame.height))
+        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: passwordTextField.frame.height))
         passwordTextField.leftViewMode = UITextField.ViewMode.always
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password".localized,attributes:[NSAttributedString.Key.foregroundColor:UIColor.black])
         
         view.addSubview(passwordTextField)
         
-        yPosition = yPosition + passwordTextField.frame.height + 10
+        yPosition = yPosition + passwordTextField.frame.height + 15
   
         //------------------------- Ui Switch -----------------------------
 
-        uiSwitch = UISwitch(frame: CGRect(x: 0, y: yPosition, width: 30, height: 20))
-        uiSwitch.backgroundColor = .clear
-        uiSwitch.isOn = true
-        uiSwitch.frame.origin.x = passwordTextField.frame.origin.x
+        stayLoggedSwitch = UISwitch(frame: CGRect(x: 0, y: yPosition, width: 30, height: 20))
+        stayLoggedSwitch.backgroundColor = .clear
+        stayLoggedSwitch.isOn = true
+        stayLoggedSwitch.frame.origin.x = passwordTextField.frame.origin.x
         
-        view.addSubview(uiSwitch)
+        view.addSubview(stayLoggedSwitch)
+        
+        //------------------------- Stay Logged Label -----------------------------
+
+        stayLoggedLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        stayLoggedLabel.text = "manter conectado"
+        stayLoggedLabel.textColor = .black
+        stayLoggedLabel.font = UIFont.defaultFont(size: 14, type: .regular)
+        stayLoggedLabel.sizeToFit()
+        stayLoggedLabel.center.y = stayLoggedSwitch.center.y
+        stayLoggedLabel.frame.origin.x = stayLoggedSwitch.frame.origin.x + stayLoggedSwitch.frame.width + 10
+        
+        yPosition = yPosition + stayLoggedLabel.frame.height + 50
+        
+        view.addSubview(stayLoggedLabel)
         
         //------------------------- Login Button -----------------------------
 
-        loginButton = UIButton(frame: CGRect(x: 0, y: yPosition, width: width*0.3, height: 40))
-        loginButton.setTitle("Login", for: .normal)
+        loginButton = UIButton(frame: CGRect(x: 0, y: yPosition, width: width*0.6, height: 50))
+        loginButton.setTitle("Entrar", for: .normal)
         loginButton.setTitleColor(.white, for: .normal)
+        loginButton.titleLabel?.font = UIFont.defaultFont(size: 18, type: .bold)
         loginButton.backgroundColor = .blue
         loginButton.layer.cornerRadius = loginButton.frame.height/2
         loginButton.center.x = width/2

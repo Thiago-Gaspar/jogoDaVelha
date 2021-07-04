@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  StartVC.swift
 //  jogoDaVelha
 //
-//  Created by Thiago Gaspar on 17/04/21.
+//  Created by Thiago Gaspar on 15/06/21.
 //
 
 
 import UIKit
 
-class LoginVC: UIViewController {
+class StartVC: UIViewController {
     
     /* **************************************************************************************************
      **
@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
      **
      ****************************************************************************************************/
     
-    var loginView : LoginView!
+    var startView : StartView!
     
     /* **************************************************************************************************
      **
@@ -27,31 +27,34 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginView = LoginView(view: view, parent: self)
+        startView = StartView(view: view, parent: self)
         
-        //------------------------------ Targets --------------------------//
-        
-        loginView.loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
-    
-        
-    }
+
+}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            
+            let vc = LoginVC()
+      
+            let moveRight = CATransition()
+            
+            moveRight.duration = 0.3
+            moveRight.type = CATransitionType.moveIn
+            moveRight.subtype = CATransitionSubtype.fromRight
+            self.view.window!.layer.add(moveRight, forKey: kCATransition)
+            
+            vc.modalPresentationStyle = .fullScreen
+            
+            self.present(vc, animated: false, completion: nil)
 
         
     }
-
-    @objc func loginAction() {
-        
-        let vc = UINavigationController(rootViewController: HomeVC())
-        
-        self.modalPresentationStyle = .fullScreen
-        
-        self.present(vc, animated: true, completion: nil)
-    }
-
     
+    }
+
 }
 
 
