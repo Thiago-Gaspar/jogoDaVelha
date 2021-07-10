@@ -8,7 +8,8 @@
 import UIKit
 
 enum AssetsColor : String {
-    case ola
+    case grayTextField
+    case blueDefault
 }
 
 extension UIColor{

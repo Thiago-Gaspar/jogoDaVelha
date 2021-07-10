@@ -78,7 +78,7 @@ class LoginView: UIView {
         
         emailLabel = UILabel(frame: CGRect(x: width*0.05, y: yPosition, width: 0, height: 0))
         emailLabel.text = "email"
-        emailLabel.textColor = .blue
+        emailLabel.textColor = UIColor.appColor(.blueDefault)
         emailLabel.font = UIFont.defaultFont(size: 14, type: .regular)
         emailLabel.sizeToFit()
         
@@ -89,7 +89,7 @@ class LoginView: UIView {
         //------------------------- Email Text Field -----------------------------
 
         emailTextField = UITextField(frame: CGRect(x: 0, y: yPosition, width: width*0.9, height: 50))
-        emailTextField.backgroundColor = .gray
+        emailTextField.backgroundColor = UIColor.appColor(.grayTextField)
         emailTextField.textColor = .black
         emailTextField.font = UIFont.defaultFont(size: 16, type: .regular)
         emailTextField.layer.cornerRadius = 12
@@ -108,7 +108,7 @@ class LoginView: UIView {
         
         passwordLabel = UILabel(frame: CGRect(x: width*0.05, y: yPosition, width: 0, height: 0))
         passwordLabel.text = "senha"
-        passwordLabel.textColor = .blue
+        passwordLabel.textColor = UIColor.appColor(.blueDefault)
         passwordLabel.font = UIFont.defaultFont(size: 14, type: .regular)
         passwordLabel.sizeToFit()
         
@@ -119,7 +119,7 @@ class LoginView: UIView {
         //------------------------- Password Text Field -----------------------------
 
         passwordTextField = UITextField(frame: CGRect(x: 0, y: yPosition, width: width*0.9, height: 50))
-        passwordTextField.backgroundColor = .gray
+        passwordTextField.backgroundColor = UIColor.appColor(.grayTextField)
         passwordTextField.textColor = .black
         passwordTextField.font = UIFont.defaultFont(size: 18, type: .regular)
         passwordTextField.layer.cornerRadius = 12
@@ -164,7 +164,7 @@ class LoginView: UIView {
         loginButton.setTitle("Entrar", for: .normal)
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.titleLabel?.font = UIFont.defaultFont(size: 18, type: .bold)
-        loginButton.backgroundColor = .blue
+        loginButton.backgroundColor = UIColor.appColor(.blueDefault)
         loginButton.layer.cornerRadius = loginButton.frame.height/2
         loginButton.center.x = width/2
         

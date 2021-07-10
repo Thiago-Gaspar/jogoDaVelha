@@ -31,9 +31,7 @@ class HomeView: UIView {
         
         let width = view.frame.size.width
         let height = view.frame.size.height
-       
-        var yPosition = height*0.1
-        
+               
         //------------------------- Scroll View -----------------------------
               
         scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: width, height: height))

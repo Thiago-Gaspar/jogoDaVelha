@@ -32,8 +32,11 @@ class LoginVC: UIViewController {
         //------------------------------ Targets --------------------------//
         
         loginView.loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
-    
         
+        //--------------------- Changing navigation Bar infos --------------------------------
+        
+        self.navigationController?.navigationBar.isHidden = true
+   
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,11 +44,18 @@ class LoginVC: UIViewController {
 
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = true
+
+    }
 
     @objc func loginAction() {
         
         let vc = UINavigationController(rootViewController: HomeVC())
-        
+
         self.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true, completion: nil)
@@ -54,11 +64,3 @@ class LoginVC: UIViewController {
 
     
 }
-
-
-
-
-
-
-
-

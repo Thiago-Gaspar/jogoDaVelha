@@ -35,9 +35,9 @@ class StartVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             
-            let vc = LoginVC()
+            let vc = UINavigationController(rootViewController: LoginVC()) 
       
             let moveRight = CATransition()
             
