@@ -79,7 +79,7 @@ class LoginView: UIView {
         emailLabel = UILabel(frame: CGRect(x: width*0.05, y: yPosition, width: 0, height: 0))
         emailLabel.text = "email"
         emailLabel.textColor = UIColor.appColor(.blueDefault)
-        emailLabel.font = UIFont.defaultFont(size: 14, type: .regular)
+        emailLabel.font = UIFont.defaultFont(size: 14, type: .regular) 
         emailLabel.sizeToFit()
         
         view.addSubview(emailLabel)

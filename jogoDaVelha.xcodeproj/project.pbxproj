@@ -14,12 +14,13 @@
 		5525BE30262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5525BE2E262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld */; };
 		5525BE32262B24E1002F7A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5525BE31262B24E1002F7A25 /* Assets.xcassets */; };
 		5525BE35262B24E1002F7A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5525BE33262B24E1002F7A25 /* LaunchScreen.storyboard */; };
+		552790F226A195B000BE6F7E /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552790F126A195B000BE6F7E /* UIFont+Extension.swift */; };
+		552790F726A196AB00BE6F7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 552790F926A196AB00BE6F7E /* Localizable.strings */; };
 		5539B76F264FFE4F0024C9A6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5539B76E264FFE4F0024C9A6 /* HomeView.swift */; };
 		5539B771264FFE5D0024C9A6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5539B770264FFE5D0024C9A6 /* HomeVC.swift */; };
 		55C2389126796A8B00B82BE3 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2389026796A8B00B82BE3 /* StartVC.swift */; };
 		55C2389326796AD100B82BE3 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2389226796AD100B82BE3 /* StartView.swift */; };
 		55E30F3C262B3BBB0046D9BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E30F3B262B3BBB0046D9BC /* LoginView.swift */; };
-		55FCB1C62640CB170089B4B8 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1C52640CB170089B4B8 /* UIFont+Extension.swift */; };
 		55FCB1C82640CB3F0089B4B8 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1C72640CB3F0089B4B8 /* UIColor+Extension.swift */; };
 		55FCB1CA2640CB9E0089B4B8 /* Strings+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1C92640CB9E0089B4B8 /* Strings+Extension.swift */; };
 		55FCB1CC2640CBC00089B4B8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCB1CB2640CBC00089B4B8 /* CardView.swift */; };
@@ -38,12 +39,14 @@
 		5525BE31262B24E1002F7A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5525BE34262B24E1002F7A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5525BE36262B24E1002F7A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		552790F126A195B000BE6F7E /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		552790F826A196AB00BE6F7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		552790FA26A196C800BE6F7E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5539B76E264FFE4F0024C9A6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5539B770264FFE5D0024C9A6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		55C2389026796A8B00B82BE3 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		55C2389226796AD100B82BE3 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		55E30F3B262B3BBB0046D9BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		55FCB1C52640CB170089B4B8 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+Extension.swift"; path = "../../../../../UIFont+Extension.swift"; sourceTree = "<group>"; };
 		55FCB1C72640CB3F0089B4B8 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		55FCB1C92640CB9E0089B4B8 /* Strings+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Extension.swift"; sourceTree = "<group>"; };
 		55FCB1CB2640CBC00089B4B8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -89,9 +92,8 @@
 			children = (
 				5525BE25262B24E0002F7A25 /* AppDelegate.swift */,
 				5525BE27262B24E0002F7A25 /* SceneDelegate.swift */,
-				55FCB1C42640B6790089B4B8 /* Translate */,
+				552790F426A1968100BE6F7E /* Translate */,
 				55FCB1C32640B6600089B4B8 /* Extensions */,
-				55FCB1C22640B64A0089B4B8 /* Cells */,
 				55AECCC3262F903900C880B9 /* Resources */,
 				55E30F3F262B9B990046D9BC /* Components */,
 				55E30F40262B9BA20046D9BC /* Models */,
@@ -99,6 +101,14 @@
 				55E30F3E262B9B910046D9BC /* Views */,
 			);
 			path = jogoDaVelha;
+			sourceTree = "<group>";
+		};
+		552790F426A1968100BE6F7E /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				552790F926A196AB00BE6F7E /* Localizable.strings */,
+			);
+			path = Translate;
 			sourceTree = "<group>";
 		};
 		55AECCC2262F900B00C880B9 /* Controllers */ = {
@@ -150,28 +160,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		55FCB1C22640B64A0089B4B8 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		55FCB1C32640B6600089B4B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				55FCB1C52640CB170089B4B8 /* UIFont+Extension.swift */,
 				55FCB1C72640CB3F0089B4B8 /* UIColor+Extension.swift */,
 				55FCB1C92640CB9E0089B4B8 /* Strings+Extension.swift */,
+				552790F126A195B000BE6F7E /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		55FCB1C42640B6790089B4B8 /* Translate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Translate;
 			sourceTree = "<group>";
 		};
 		5F0EB9460A7EB1AAA9756283 /* Pods */ = {
@@ -234,6 +230,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 5525BE19262B24E0002F7A25;
 			productRefGroup = 5525BE23262B24E0002F7A25 /* Products */;
@@ -251,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5525BE35262B24E1002F7A25 /* LaunchScreen.storyboard in Resources */,
+				552790F726A196AB00BE6F7E /* Localizable.strings in Resources */,
 				5525BE32262B24E1002F7A25 /* Assets.xcassets in Resources */,
 				5525BE2D262B24E0002F7A25 /* Main.storyboard in Resources */,
 			);
@@ -307,8 +305,8 @@
 			files = (
 				55FCB1C82640CB3F0089B4B8 /* UIColor+Extension.swift in Sources */,
 				55FCB1CC2640CBC00089B4B8 /* CardView.swift in Sources */,
-				55FCB1C62640CB170089B4B8 /* UIFont+Extension.swift in Sources */,
 				5525BE30262B24E0002F7A25 /* jogoDaVelha.xcdatamodeld in Sources */,
+				552790F226A195B000BE6F7E /* UIFont+Extension.swift in Sources */,
 				5539B771264FFE5D0024C9A6 /* HomeVC.swift in Sources */,
 				5525BE2A262B24E0002F7A25 /* LoginVC.swift in Sources */,
 				55C2389326796AD100B82BE3 /* StartView.swift in Sources */,
@@ -342,6 +340,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		552790F926A196AB00BE6F7E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				552790F826A196AB00BE6F7E /* en */,
+				552790FA26A196C800BE6F7E /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -349,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -410,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
