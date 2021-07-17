@@ -56,7 +56,7 @@ class LoginVC: UIViewController {
         
         let vc = HomeVC()
 
-        self.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true, completion: nil)
 
