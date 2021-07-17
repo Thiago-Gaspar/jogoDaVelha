@@ -139,6 +139,7 @@ class LoginView: UIView {
 
         stayLoggedSwitch = UISwitch(frame: CGRect(x: 0, y: yPosition, width: 30, height: 20))
         stayLoggedSwitch.backgroundColor = .clear
+        stayLoggedSwitch.onTintColor = UIColor.appColor(.blueDefault)
         stayLoggedSwitch.isOn = true
         stayLoggedSwitch.frame.origin.x = passwordTextField.frame.origin.x
         
