@@ -18,6 +18,8 @@ class HomeView: UIView {
         
     var scrollView : UIScrollView!
     
+    
+    
     /* ******************************************************************************
      **
      **  MARK: Init

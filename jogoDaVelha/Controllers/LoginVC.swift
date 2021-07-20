@@ -54,6 +54,22 @@ class LoginVC: UIViewController {
 
     @objc func loginAction() {
         
+        if self.loginView.emailTextField.text == nil || self.loginView.emailTextField.text!.isEmpty {
+            
+            GenericAlert.genericAlert(self, title: "Favor preencher o campo de email", message: "", actions: [])
+            
+            return
+            
+        }
+        
+        if self.loginView.passwordTextField.text == nil || self.loginView.passwordTextField.text!.isEmpty {
+            
+            GenericAlert.genericAlert(self, title: "Favor preencher o campo de senha", message: "", actions: [])
+            
+            return
+            
+        }
+        
         let vc = HomeVC()
 
         vc.modalPresentationStyle = .fullScreen
