@@ -15,10 +15,41 @@ class HomeView: UIView {
      **  MARK: Variables Declaration
      **
      **********************************************************************************/
-        
-    var scrollView : UIScrollView!
+
+    var ballImageView : UIImageView!
     
+    var playImageView : UIImageView!
+
+    var playLabel : UILabel!
     
+    var crossImageView : UIImageView!
+    
+    var leftVerticalLineView : UIView!
+    
+    var rightVerticalLineView : UIView!
+    
+    var topHorizontalLineView : UIView!
+    
+    var bottomHorizontalLineView : UIView!
+    
+    var firstGameView : UIView!
+    
+    var secondGameView : UIView!
+    
+    var thirdGameView : UIView!
+
+    var fourthGameView : UIView!
+
+    var fifthGameView : UIView!
+
+    var sixthGameView : UIView!
+
+    var seventhGameView : UIView!
+
+    var eightGameView : UIView!
+
+    var nineGameView : UIView!
+
     
     /* ******************************************************************************
      **
@@ -34,14 +65,8 @@ class HomeView: UIView {
         let width = view.frame.size.width
         let height = view.frame.size.height
                
-        //------------------------- Scroll View -----------------------------
-              
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        scrollView.backgroundColor = .white
-        scrollView.isScrollEnabled = false
-        scrollView.contentInsetAdjustmentBehavior = .never
-        
-        view.addSubview(scrollView)
+        //-------------------------  -----------------------------
+    
        
         
         

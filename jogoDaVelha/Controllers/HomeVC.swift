@@ -43,9 +43,7 @@ class HomeVC: UIViewController {
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = UIColor.black
-        
-        navigationItem.title = "Ok"
-        
+                
         
         
     }
