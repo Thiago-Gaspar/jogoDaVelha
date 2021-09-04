@@ -16,21 +16,7 @@ class HomeView: UIView {
      **
      **********************************************************************************/
     
-    var ballImageView : UIImageView!
-    
-    var playImageView : UIImageView!
-    
-    var playLabel : UILabel!
-    
-    var crossImageView : UIImageView!
-    
-    var leftVerticalLineView : UIView!
-    
-    var rightVerticalLineView : UIView!
-    
-    var topHorizontalLineView : UIView!
-    
-    var bottomHorizontalLineView : UIView!
+    var screenView : UIView!
     
     var firstGameView : UIView!
     
@@ -50,7 +36,14 @@ class HomeView: UIView {
     
     var nineGameView : UIView!
     
+    var firstHorizontalLineView : UIView!
     
+    var secondHorizontalLineView : UIView!
+    
+    var firstVerticalLineView : UIView!
+    
+    var secondVerticalLineView : UIView!
+  
     /* ******************************************************************************
      **
      **  MARK: Init
@@ -65,27 +58,119 @@ class HomeView: UIView {
         let width = view.frame.size.width
         let height = view.frame.size.height
         
-        var yPosition = height*0.05
         
-        //------------------------- Ball Image View -----------------------------
-        
-        ballImageView = UIImageView(frame: CGRect(x: width*0.1, y: yPosition, width: 40, height: 40))
-        ballImageView.image = UIImage(named: "ball")
-        ballImageView.contentMode = .scaleAspectFit
-        ballImageView.layer.cornerRadius = ballImageView.frame.height/2
-        
-        view.addSubview(ballImageView)
-        
-        //------------------------- Play Image View -----------------------------
+        //------------------------- Screen View -----------------------------
 
-        playImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: 100, height: 40))
-        playImageView.image = UIImage(named: "ball")
-        playImageView.contentMode = .scaleAspectFit
-        playImageView.center.x = width/2
+        screenView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.85, height: width*0.75 + 40))
+        screenView.center.y = view.center.y
+        screenView.center.x = width/2
         
-        view.addSubview(playImageView)
+        view.addSubview(screenView)
         
+        //------------------------- First Game View -----------------------------
         
+        firstGameView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
+        firstGameView.backgroundColor = UIColor.white
+        
+        screenView.addSubview(firstGameView)
+        
+        //------------------------- Second Game View -----------------------------
+        
+        secondGameView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
+        secondGameView.backgroundColor = UIColor.white
+        secondGameView.frame.origin.x = firstGameView.frame.origin.x + firstGameView.frame.width + width*0.05
+        
+        screenView.addSubview(secondGameView)
+        
+        //------------------------- Third Game View -----------------------------
+        
+        thirdGameView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
+        thirdGameView.backgroundColor = UIColor.white
+        thirdGameView.frame.origin.x = secondGameView.frame.origin.x + secondGameView.frame.width + width*0.05
+        
+        screenView.addSubview(thirdGameView)
+        
+        var yPosition = thirdGameView.frame.height + 20
+        
+        //------------------------- Fourth Game View -----------------------------
+        
+        fourthGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        fourthGameView.backgroundColor = UIColor.white
+        
+        screenView.addSubview(fourthGameView)
+        
+        //------------------------- Fifth Game View -----------------------------
+        
+        fifthGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        fifthGameView.backgroundColor = UIColor.white
+        fifthGameView.frame.origin.x = fourthGameView.frame.origin.x + fourthGameView.frame.width + width*0.05
+        
+        screenView.addSubview(fifthGameView)
+        
+        //------------------------- Sixth Game View -----------------------------
+        
+        sixthGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        sixthGameView.backgroundColor = UIColor.white
+        sixthGameView.frame.origin.x = fifthGameView.frame.origin.x + fifthGameView.frame.width + width*0.05
+        
+        screenView.addSubview(sixthGameView)
+        
+        yPosition = yPosition + sixthGameView.frame.height + 20
+        
+        //------------------------- Seventh Game View -----------------------------
+        
+        seventhGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        seventhGameView.backgroundColor = UIColor.white
+        
+        screenView.addSubview(seventhGameView)
+        
+        //------------------------- Eight Game View -----------------------------
+        
+        eightGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        eightGameView.backgroundColor = UIColor.white
+        eightGameView.frame.origin.x = seventhGameView.frame.origin.x + seventhGameView.frame.width + width*0.05
+        
+        screenView.addSubview(eightGameView)
+        
+        //------------------------- Nine Game View -----------------------------
+        
+        nineGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        nineGameView.backgroundColor = UIColor.white
+        nineGameView.frame.origin.x = eightGameView.frame.origin.x + eightGameView.frame.width + width*0.05
+        
+        screenView.addSubview(nineGameView)
+        
+        //------------------------- First Horizontal Line View -----------------------------
+
+        firstHorizontalLineView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.85, height: 20))
+        firstHorizontalLineView.backgroundColor = .black
+        firstHorizontalLineView.frame.origin.y = firstGameView.frame.origin.y + firstGameView.frame.height
+        
+        screenView.addSubview(firstHorizontalLineView)
+                
+        //------------------------- Second Horizontal Line View -----------------------------
+
+        secondHorizontalLineView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.85, height: 20))
+        secondHorizontalLineView.backgroundColor = .black
+        secondHorizontalLineView.frame.origin.y = fourthGameView.frame.origin.y + fourthGameView.frame.height
+        
+        screenView.addSubview(secondHorizontalLineView)
+        
+        //------------------------- First Vertical Line View -----------------------------
+
+        firstVerticalLineView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.05, height: screenView.frame.height))
+        firstVerticalLineView.backgroundColor = .black
+        firstVerticalLineView.frame.origin.x = firstGameView.frame.origin.x + firstGameView.frame.width
+        
+        screenView.addSubview(firstVerticalLineView)
+        
+        //------------------------- Second Vertical Line View -----------------------------
+
+        secondVerticalLineView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.05, height: screenView.frame.height))
+        secondVerticalLineView.backgroundColor = .black
+        secondVerticalLineView.frame.origin.x = secondGameView.frame.origin.x + secondGameView.frame.width
+        
+        screenView.addSubview(secondVerticalLineView)
         
     }
     
