@@ -9,6 +9,7 @@ target 'jogoDaVelha' do
 
 pod 'IQKeyboardManagerSwift' 
 pod 'SideMenu'
+pod 'SDWebImage'
 
 post_install do |installer|   
   installer.pods_project.build_configurations.each do |config|
