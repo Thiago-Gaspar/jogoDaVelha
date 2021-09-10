@@ -16,6 +16,8 @@ class HomeView: UIView {
      **
      **********************************************************************************/
     
+    var hashtagLabel : UILabel!
+    
     var screenView : UIView!
     
     var firstGameImageView : UIImageView!
@@ -43,6 +45,8 @@ class HomeView: UIView {
     var firstVerticalLineView : UIView!
     
     var secondVerticalLineView : UIView!
+    
+    var resetButton : UIButton!
   
     /* ******************************************************************************
      **
@@ -58,6 +62,17 @@ class HomeView: UIView {
         let width = view.frame.size.width
         let height = view.frame.size.height
         
+        
+        //------------------------- Hashtag -----------------------------
+
+        hashtagLabel = UILabel(frame: CGRect(x: 0, y: height*0.1, width: width, height: height*0.15))
+        hashtagLabel.text = "Jogo da Velha".localized
+        hashtagLabel.textColor = .black
+        hashtagLabel.textAlignment = .center
+        hashtagLabel.font = UIFont.defaultFont(size: 40, type: .bold)
+        hashtagLabel.center.x = width/2
+        
+        view.addSubview(hashtagLabel)
         
         //------------------------- Screen View -----------------------------
 
@@ -180,6 +195,19 @@ class HomeView: UIView {
         secondVerticalLineView.frame.origin.x = secondGameImageView.frame.origin.x + secondGameImageView.frame.width
         
         screenView.addSubview(secondVerticalLineView)
+        
+        //------------------------- Reset Button -----------------------------
+
+        resetButton = UIButton(frame: CGRect(x: 0, y: 0, width: width*0.7, height: 60))
+        resetButton.backgroundColor = .black
+        resetButton.setTitle("Reiniciar", for: .normal)
+        resetButton.setTitleColor(.white, for: .normal)
+        resetButton.titleLabel?.font = UIFont.defaultFont(size: 25, type: .bold)
+        resetButton.layer.cornerRadius = resetButton.frame.height/2
+        resetButton.center.x = width/2
+        resetButton.frame.origin.y = height*0.9 - resetButton.frame.height
+        
+        view.addSubview(resetButton)
         
     }
     

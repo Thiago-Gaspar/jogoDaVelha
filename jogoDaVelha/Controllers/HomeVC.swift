@@ -31,6 +31,8 @@ class HomeVC: UIViewController {
         homeView = HomeView(view: view, parent: self)
         
         //------------------------------ Targets --------------------------//
+        
+        homeView.resetButton.addTarget(self, action: #selector(resetGame), for: .touchUpInside)
     
         let firstTap = UITapGestureRecognizer(target: self, action: #selector(firstViewClicked))
         let secondTap = UITapGestureRecognizer(target: self, action: #selector(secondViewClicked))
@@ -76,6 +78,23 @@ class HomeVC: UIViewController {
         
     }
     
+    @objc func resetGame() {
+        
+        self.homeView.firstGameImageView.image = nil
+        self.homeView.secondGameImageView.image = nil
+        self.homeView.thirdGameImageView.image = nil
+        self.homeView.fourthGameImageView.image = nil
+        self.homeView.fifthGameImageView.image = nil
+        self.homeView.sixthGameImageView.image = nil
+        self.homeView.seventhGameImageView.image = nil
+        self.homeView.eightGameImageView.image = nil
+        self.homeView.nineGameImageView.image = nil
+        
+        self.player1 = true
+
+        
+    }
+    
     @objc func firstViewClicked() {
         
         let aux = self.homeView
@@ -92,7 +111,12 @@ class HomeVC: UIViewController {
                     
                     aux?.firstGameImageView.image = UIImage(named: "ball")
                     
-                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [])
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -102,6 +126,13 @@ class HomeVC: UIViewController {
                     
                     aux?.firstGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -109,6 +140,13 @@ class HomeVC: UIViewController {
                 } else if aux?.fourthGameImageView.image == UIImage(named: "ball") && aux?.seventhGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.firstGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -136,6 +174,13 @@ class HomeVC: UIViewController {
                 
                 aux?.firstGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -144,6 +189,13 @@ class HomeVC: UIViewController {
                 
                 aux?.firstGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -151,6 +203,13 @@ class HomeVC: UIViewController {
             } else if aux?.fourthGameImageView.image == UIImage(named: "close") && aux?.seventhGameImageView.image == UIImage(named: "close") {
                 
                 aux?.firstGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -184,6 +243,13 @@ class HomeVC: UIViewController {
                     
                     aux?.secondGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -191,6 +257,13 @@ class HomeVC: UIViewController {
                 } else if aux?.fifthGameImageView.image == UIImage(named: "ball") && aux?.eightGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.secondGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -218,6 +291,13 @@ class HomeVC: UIViewController {
                 
                 aux?.secondGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -225,6 +305,13 @@ class HomeVC: UIViewController {
             } else if aux?.fifthGameImageView.image == UIImage(named: "close") && aux?.eightGameImageView.image == UIImage(named: "close") {
                 
                 aux?.secondGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -258,6 +345,13 @@ class HomeVC: UIViewController {
                     
                     aux?.thirdGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -266,6 +360,13 @@ class HomeVC: UIViewController {
                     
                     aux?.thirdGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -273,6 +374,13 @@ class HomeVC: UIViewController {
                 } else if aux?.sixthGameImageView.image == UIImage(named: "ball") && aux?.nineGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.thirdGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -300,6 +408,13 @@ class HomeVC: UIViewController {
                 
                 aux?.thirdGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -308,6 +423,13 @@ class HomeVC: UIViewController {
                 
                 aux?.thirdGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -315,6 +437,13 @@ class HomeVC: UIViewController {
             } else if aux?.sixthGameImageView.image == UIImage(named: "close") && aux?.nineGameImageView.image == UIImage(named: "close") {
                 
                 aux?.thirdGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -348,6 +477,13 @@ class HomeVC: UIViewController {
                     
                     aux?.fourthGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -355,6 +491,13 @@ class HomeVC: UIViewController {
                 } else if aux?.firstGameImageView.image == UIImage(named: "ball") && aux?.seventhGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.fourthGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -382,6 +525,13 @@ class HomeVC: UIViewController {
                 
                 aux?.fourthGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -389,6 +539,13 @@ class HomeVC: UIViewController {
             } else if aux?.firstGameImageView.image == UIImage(named: "close") && aux?.seventhGameImageView.image == UIImage(named: "close") {
                 
                 aux?.fourthGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -422,6 +579,13 @@ class HomeVC: UIViewController {
                     
                     aux?.fifthGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -429,6 +593,13 @@ class HomeVC: UIViewController {
                 } else if aux?.fourthGameImageView.image == UIImage(named: "ball") && aux?.sixthGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.fifthGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -438,6 +609,13 @@ class HomeVC: UIViewController {
                     
                     aux?.fifthGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -445,6 +623,13 @@ class HomeVC: UIViewController {
                 } else if aux?.thirdGameImageView.image == UIImage(named: "ball") && aux?.seventhGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.fifthGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -472,6 +657,13 @@ class HomeVC: UIViewController {
                 
                 aux?.fifthGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -479,6 +671,13 @@ class HomeVC: UIViewController {
             } else if aux?.fourthGameImageView.image == UIImage(named: "close") && aux?.sixthGameImageView.image == UIImage(named: "close") {
                 
                 aux?.fifthGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -488,6 +687,13 @@ class HomeVC: UIViewController {
                 
                 aux?.fifthGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -495,6 +701,13 @@ class HomeVC: UIViewController {
             } else if aux?.thirdGameImageView.image == UIImage(named: "close") && aux?.seventhGameImageView.image == UIImage(named: "close") {
                 
                 aux?.fifthGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -528,6 +741,13 @@ class HomeVC: UIViewController {
                     
                     aux?.sixthGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -535,6 +755,13 @@ class HomeVC: UIViewController {
                 } else if aux?.thirdGameImageView.image == UIImage(named: "ball") && aux?.nineGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.sixthGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -562,6 +789,13 @@ class HomeVC: UIViewController {
                 
                 aux?.sixthGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -569,6 +803,13 @@ class HomeVC: UIViewController {
             } else if aux?.thirdGameImageView.image == UIImage(named: "close") && aux?.nineGameImageView.image == UIImage(named: "close") {
                 
                 aux?.sixthGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -602,13 +843,27 @@ class HomeVC: UIViewController {
                     
                     aux?.seventhGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
                
-                } else if aux?.secondGameImageView.image == UIImage(named: "ball") && aux?.firstGameImageView.image == UIImage(named: "ball") {
+                } else if aux?.fourthGameImageView.image == UIImage(named: "ball") && aux?.firstGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.seventhGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -617,6 +872,13 @@ class HomeVC: UIViewController {
                 } else if aux?.eightGameImageView.image == UIImage(named: "ball") && aux?.nineGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.seventhGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -644,13 +906,27 @@ class HomeVC: UIViewController {
                 
                 aux?.seventhGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
            
-            } else if aux?.secondGameImageView.image == UIImage(named: "close") && aux?.firstGameImageView.image == UIImage(named: "close") {
+            } else if aux?.fourthGameImageView.image == UIImage(named: "close") && aux?.firstGameImageView.image == UIImage(named: "close") {
                 
                 aux?.seventhGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -659,6 +935,13 @@ class HomeVC: UIViewController {
             } else if aux?.eightGameImageView.image == UIImage(named: "close") && aux?.nineGameImageView.image == UIImage(named: "close") {
                 
                 aux?.seventhGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -692,6 +975,13 @@ class HomeVC: UIViewController {
                     
                     aux?.eightGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -699,6 +989,13 @@ class HomeVC: UIViewController {
                 } else if aux?.fifthGameImageView.image == UIImage(named: "ball") && aux?.secondGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.eightGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -726,6 +1023,13 @@ class HomeVC: UIViewController {
                 
                 aux?.eightGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -733,6 +1037,13 @@ class HomeVC: UIViewController {
             } else if aux?.fifthGameImageView.image == UIImage(named: "close") && aux?.secondGameImageView.image == UIImage(named: "close") {
                 
                 aux?.eightGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
@@ -766,6 +1077,13 @@ class HomeVC: UIViewController {
                     
                     aux?.nineGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -774,6 +1092,13 @@ class HomeVC: UIViewController {
                     
                     aux?.nineGameImageView.image = UIImage(named: "ball")
                     
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
+                    
                     print("Player 1 Win!")
                     
                     return
@@ -781,6 +1106,13 @@ class HomeVC: UIViewController {
                 } else if aux?.sixthGameImageView.image == UIImage(named: "ball") && aux?.thirdGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.nineGameImageView.image = UIImage(named: "ball")
+                    
+                    let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                        
+                        self.resetGame()
+                        
+                    }
+                    GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
@@ -808,6 +1140,13 @@ class HomeVC: UIViewController {
                 
                 aux?.nineGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -816,6 +1155,13 @@ class HomeVC: UIViewController {
                 
                 aux?.nineGameImageView.image = UIImage(named: "close")
                 
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
+                
                 print("Player 2 Win!")
                 
                 return
@@ -823,6 +1169,13 @@ class HomeVC: UIViewController {
             } else if aux?.sixthGameImageView.image == UIImage(named: "close") && aux?.thirdGameImageView.image == UIImage(named: "close") {
                 
                 aux?.nineGameImageView.image = UIImage(named: "close")
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+                    
+                    self.resetGame()
+                    
+                }
+                GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 2 venceu!", actions: [okAction])
                 
                 print("Player 2 Win!")
                 
