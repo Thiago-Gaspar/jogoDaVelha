@@ -148,7 +148,7 @@ class LoginView: UIView {
         //------------------------- Stay Logged Label -----------------------------
 
         stayLoggedLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        stayLoggedLabel.text = "manter conectadoooouahsuashushkkkkkkkkk"
+        stayLoggedLabel.text = "manter conectado"
         stayLoggedLabel.textColor = .black
         stayLoggedLabel.font = UIFont.defaultFont(size: 14, type: .regular)
         stayLoggedLabel.sizeToFit()

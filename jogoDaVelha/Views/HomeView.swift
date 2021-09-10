@@ -18,23 +18,23 @@ class HomeView: UIView {
     
     var screenView : UIView!
     
-    var firstGameView : UIView!
+    var firstGameImageView : UIImageView!
     
-    var secondGameView : UIView!
+    var secondGameImageView : UIImageView!
     
-    var thirdGameView : UIView!
+    var thirdGameImageView : UIImageView!
     
-    var fourthGameView : UIView!
+    var fourthGameImageView : UIImageView!
     
-    var fifthGameView : UIView!
+    var fifthGameImageView : UIImageView!
     
-    var sixthGameView : UIView!
+    var sixthGameImageView : UIImageView!
     
-    var seventhGameView : UIView!
+    var seventhGameImageView : UIImageView!
     
-    var eightGameView : UIView!
+    var eightGameImageView : UIImageView!
     
-    var nineGameView : UIView!
+    var nineGameImageView : UIImageView!
     
     var firstHorizontalLineView : UIView!
     
@@ -69,82 +69,91 @@ class HomeView: UIView {
         
         //------------------------- First Game View -----------------------------
         
-        firstGameView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
-        firstGameView.backgroundColor = UIColor.white
+        firstGameImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
+        firstGameImageView.backgroundColor = UIColor.white
+        firstGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(firstGameView)
+        screenView.addSubview(firstGameImageView)
         
         //------------------------- Second Game View -----------------------------
         
-        secondGameView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
-        secondGameView.backgroundColor = UIColor.white
-        secondGameView.frame.origin.x = firstGameView.frame.origin.x + firstGameView.frame.width + width*0.05
+        secondGameImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
+        secondGameImageView.backgroundColor = UIColor.white
+        secondGameImageView.frame.origin.x = firstGameImageView.frame.origin.x + firstGameImageView.frame.width + width*0.05
+        secondGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(secondGameView)
+        screenView.addSubview(secondGameImageView)
         
         //------------------------- Third Game View -----------------------------
         
-        thirdGameView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
-        thirdGameView.backgroundColor = UIColor.white
-        thirdGameView.frame.origin.x = secondGameView.frame.origin.x + secondGameView.frame.width + width*0.05
+        thirdGameImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width*0.25, height: width*0.25))
+        thirdGameImageView.backgroundColor = UIColor.white
+        thirdGameImageView.frame.origin.x = secondGameImageView.frame.origin.x + secondGameImageView.frame.width + width*0.05
+        thirdGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(thirdGameView)
+        screenView.addSubview(thirdGameImageView)
         
-        var yPosition = thirdGameView.frame.height + 20
+        var yPosition = thirdGameImageView.frame.height + 20
         
         //------------------------- Fourth Game View -----------------------------
         
-        fourthGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
-        fourthGameView.backgroundColor = UIColor.white
+        fourthGameImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        fourthGameImageView.backgroundColor = UIColor.white
+        fourthGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(fourthGameView)
+        screenView.addSubview(fourthGameImageView)
         
         //------------------------- Fifth Game View -----------------------------
         
-        fifthGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
-        fifthGameView.backgroundColor = UIColor.white
-        fifthGameView.frame.origin.x = fourthGameView.frame.origin.x + fourthGameView.frame.width + width*0.05
+        fifthGameImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        fifthGameImageView.backgroundColor = UIColor.white
+        fifthGameImageView.frame.origin.x = fourthGameImageView.frame.origin.x + fourthGameImageView.frame.width + width*0.05
+        fifthGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(fifthGameView)
+        screenView.addSubview(fifthGameImageView)
         
         //------------------------- Sixth Game View -----------------------------
         
-        sixthGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
-        sixthGameView.backgroundColor = UIColor.white
-        sixthGameView.frame.origin.x = fifthGameView.frame.origin.x + fifthGameView.frame.width + width*0.05
+        sixthGameImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        sixthGameImageView.backgroundColor = UIColor.white
+        sixthGameImageView.frame.origin.x = fifthGameImageView.frame.origin.x + fifthGameImageView.frame.width + width*0.05
+        sixthGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(sixthGameView)
+        screenView.addSubview(sixthGameImageView)
         
-        yPosition = yPosition + sixthGameView.frame.height + 20
+        yPosition = yPosition + sixthGameImageView.frame.height + 20
         
         //------------------------- Seventh Game View -----------------------------
         
-        seventhGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
-        seventhGameView.backgroundColor = UIColor.white
+        seventhGameImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        seventhGameImageView.backgroundColor = UIColor.white
+        seventhGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(seventhGameView)
+        screenView.addSubview(seventhGameImageView)
         
         //------------------------- Eight Game View -----------------------------
         
-        eightGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
-        eightGameView.backgroundColor = UIColor.white
-        eightGameView.frame.origin.x = seventhGameView.frame.origin.x + seventhGameView.frame.width + width*0.05
+        eightGameImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        eightGameImageView.backgroundColor = UIColor.white
+        eightGameImageView.frame.origin.x = seventhGameImageView.frame.origin.x + seventhGameImageView.frame.width + width*0.05
+        eightGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(eightGameView)
+        screenView.addSubview(eightGameImageView)
         
         //------------------------- Nine Game View -----------------------------
         
-        nineGameView = UIView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
-        nineGameView.backgroundColor = UIColor.white
-        nineGameView.frame.origin.x = eightGameView.frame.origin.x + eightGameView.frame.width + width*0.05
+        nineGameImageView = UIImageView(frame: CGRect(x: 0, y: yPosition, width: width*0.25, height: width*0.25))
+        nineGameImageView.backgroundColor = UIColor.white
+        nineGameImageView.frame.origin.x = eightGameImageView.frame.origin.x + eightGameImageView.frame.width + width*0.05
+        nineGameImageView.isUserInteractionEnabled = true
         
-        screenView.addSubview(nineGameView)
+        screenView.addSubview(nineGameImageView)
         
         //------------------------- First Horizontal Line View -----------------------------
 
         firstHorizontalLineView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.85, height: 20))
         firstHorizontalLineView.backgroundColor = .black
-        firstHorizontalLineView.frame.origin.y = firstGameView.frame.origin.y + firstGameView.frame.height
+        firstHorizontalLineView.frame.origin.y = firstGameImageView.frame.origin.y + firstGameImageView.frame.height
         
         screenView.addSubview(firstHorizontalLineView)
                 
@@ -152,7 +161,7 @@ class HomeView: UIView {
 
         secondHorizontalLineView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.85, height: 20))
         secondHorizontalLineView.backgroundColor = .black
-        secondHorizontalLineView.frame.origin.y = fourthGameView.frame.origin.y + fourthGameView.frame.height
+        secondHorizontalLineView.frame.origin.y = fourthGameImageView.frame.origin.y + fourthGameImageView.frame.height
         
         screenView.addSubview(secondHorizontalLineView)
         
@@ -160,7 +169,7 @@ class HomeView: UIView {
 
         firstVerticalLineView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.05, height: screenView.frame.height))
         firstVerticalLineView.backgroundColor = .black
-        firstVerticalLineView.frame.origin.x = firstGameView.frame.origin.x + firstGameView.frame.width
+        firstVerticalLineView.frame.origin.x = firstGameImageView.frame.origin.x + firstGameImageView.frame.width
         
         screenView.addSubview(firstVerticalLineView)
         
@@ -168,7 +177,7 @@ class HomeView: UIView {
 
         secondVerticalLineView = UIView(frame: CGRect(x: 0, y: 0, width: width*0.05, height: screenView.frame.height))
         secondVerticalLineView.backgroundColor = .black
-        secondVerticalLineView.frame.origin.x = secondGameView.frame.origin.x + secondGameView.frame.width
+        secondVerticalLineView.frame.origin.x = secondGameImageView.frame.origin.x + secondGameImageView.frame.width
         
         screenView.addSubview(secondVerticalLineView)
         
