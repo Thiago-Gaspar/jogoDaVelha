@@ -36,12 +36,12 @@ class LoginVC: UIViewController {
         //--------------------- Changing navigation Bar infos --------------------------------
         
         self.navigationController?.navigationBar.isHidden = true
-   
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         
     }
     
@@ -49,34 +49,41 @@ class LoginVC: UIViewController {
         super.viewWillDisappear(animated)
         
         self.navigationController?.navigationBar.isHidden = true
-
+        
     }
-
+    
     @objc func loginAction() {
         
-        if self.loginView.emailTextField.text == nil || self.loginView.emailTextField.text!.isEmpty {
+//        if self.loginView.emailTextField.text == nil || self.loginView.emailTextField.text!.isEmpty {
+//
+//            GenericAlert.genericAlert(self, title: "Favor preencher o campo de email", message: "", actions: [])
+//            
+//            return
+//
+//        }
+//
+//        if self.loginView.passwordTextField.text == nil || self.loginView.passwordTextField.text!.isEmpty {
+//
+//            GenericAlert.genericAlert(self, title: "Favor preencher o campo de senha", message: "", actions: [])
+//
+//            return
+//
+//        }
+        
+        self.startLoading()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             
-            GenericAlert.genericAlert(self, title: "Favor preencher o campo de email", message: "", actions: [])
+            self.stopLoading()
             
-            return
+            let vc = HomeVC()
+            
+            vc.modalPresentationStyle = .fullScreen
+            
+            self.present(vc, animated: true, completion: nil)
             
         }
-        
-        if self.loginView.passwordTextField.text == nil || self.loginView.passwordTextField.text!.isEmpty {
-            
-            GenericAlert.genericAlert(self, title: "Favor preencher o campo de senha", message: "", actions: [])
-            
-            return
-            
-        }
-        
-        let vc = HomeVC()
-
-        vc.modalPresentationStyle = .fullScreen
-        
-        self.present(vc, animated: true, completion: nil)
-
+     
     }
-
     
 }

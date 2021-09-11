@@ -33,7 +33,7 @@ class HomeVC: UIViewController {
         //------------------------------ Targets --------------------------//
         
         homeView.resetButton.addTarget(self, action: #selector(resetGame), for: .touchUpInside)
-    
+        
         let firstTap = UITapGestureRecognizer(target: self, action: #selector(firstViewClicked))
         let secondTap = UITapGestureRecognizer(target: self, action: #selector(secondViewClicked))
         let thirdTap = UITapGestureRecognizer(target: self, action: #selector(thirdViewClicked))
@@ -67,15 +67,25 @@ class HomeVC: UIViewController {
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = UIColor.black
-                
-        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         
+        
+    }
+    
+    func drawGameAction() {
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default) { alert in
+            
+            self.resetGame()
+            
+        }
+        
+        GenericAlert.genericAlert(self, title: "Empate!", message: "A famosa velha!", actions: [okAction])
+  
     }
     
     @objc func resetGame() {
@@ -91,7 +101,6 @@ class HomeVC: UIViewController {
         self.homeView.nineGameImageView.image = nil
         
         self.player1 = true
-
         
     }
     
@@ -121,7 +130,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.fifthGameImageView.image == UIImage(named: "ball") && aux?.nineGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.firstGameImageView.image = UIImage(named: "ball")
@@ -136,7 +145,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.fourthGameImageView.image == UIImage(named: "ball") && aux?.seventhGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.firstGameImageView.image = UIImage(named: "ball")
@@ -146,12 +155,13 @@ class HomeVC: UIViewController {
                         self.resetGame()
                         
                     }
+                    
                     GenericAlert.genericAlert(self, title: "Parabéns!", message: "Player 1 venceu!", actions: [okAction])
                     
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.firstGameImageView.image = UIImage(named: "ball")
@@ -160,8 +170,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.firstGameImageView.image != nil {
@@ -184,7 +200,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.fifthGameImageView.image == UIImage(named: "close") && aux?.nineGameImageView.image == UIImage(named: "close") {
                 
                 aux?.firstGameImageView.image = UIImage(named: "close")
@@ -199,7 +215,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.fourthGameImageView.image == UIImage(named: "close") && aux?.seventhGameImageView.image == UIImage(named: "close") {
                 
                 aux?.firstGameImageView.image = UIImage(named: "close")
@@ -214,7 +230,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.firstGameImageView.image = UIImage(named: "close")
@@ -222,9 +238,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
     @objc func secondViewClicked() {
@@ -253,7 +275,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.fifthGameImageView.image == UIImage(named: "ball") && aux?.eightGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.secondGameImageView.image = UIImage(named: "ball")
@@ -268,7 +290,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.secondGameImageView.image = UIImage(named: "ball")
@@ -277,8 +299,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.secondGameImageView.image != nil {
@@ -301,7 +329,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.fifthGameImageView.image == UIImage(named: "close") && aux?.eightGameImageView.image == UIImage(named: "close") {
                 
                 aux?.secondGameImageView.image = UIImage(named: "close")
@@ -316,7 +344,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.secondGameImageView.image = UIImage(named: "close")
@@ -324,9 +352,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
     @objc func thirdViewClicked() {
@@ -355,7 +389,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.fifthGameImageView.image == UIImage(named: "ball") && aux?.seventhGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.thirdGameImageView.image = UIImage(named: "ball")
@@ -370,7 +404,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.sixthGameImageView.image == UIImage(named: "ball") && aux?.nineGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.thirdGameImageView.image = UIImage(named: "ball")
@@ -385,7 +419,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.thirdGameImageView.image = UIImage(named: "ball")
@@ -394,8 +428,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.thirdGameImageView.image != nil {
@@ -418,7 +458,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.fifthGameImageView.image == UIImage(named: "close") && aux?.seventhGameImageView.image == UIImage(named: "close") {
                 
                 aux?.thirdGameImageView.image = UIImage(named: "close")
@@ -433,7 +473,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.sixthGameImageView.image == UIImage(named: "close") && aux?.nineGameImageView.image == UIImage(named: "close") {
                 
                 aux?.thirdGameImageView.image = UIImage(named: "close")
@@ -448,7 +488,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.thirdGameImageView.image = UIImage(named: "close")
@@ -456,9 +496,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
     @objc func fourthViewClicked() {
@@ -487,7 +533,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.firstGameImageView.image == UIImage(named: "ball") && aux?.seventhGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.fourthGameImageView.image = UIImage(named: "ball")
@@ -502,7 +548,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.fourthGameImageView.image = UIImage(named: "ball")
@@ -511,8 +557,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.fourthGameImageView.image != nil {
@@ -535,7 +587,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.firstGameImageView.image == UIImage(named: "close") && aux?.seventhGameImageView.image == UIImage(named: "close") {
                 
                 aux?.fourthGameImageView.image = UIImage(named: "close")
@@ -550,7 +602,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.fourthGameImageView.image = UIImage(named: "close")
@@ -558,9 +610,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
     @objc func fifthViewClicked() {
@@ -589,7 +647,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.fourthGameImageView.image == UIImage(named: "ball") && aux?.sixthGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.fifthGameImageView.image = UIImage(named: "ball")
@@ -604,7 +662,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.firstGameImageView.image == UIImage(named: "ball") && aux?.nineGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.fifthGameImageView.image = UIImage(named: "ball")
@@ -619,7 +677,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.thirdGameImageView.image == UIImage(named: "ball") && aux?.seventhGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.fifthGameImageView.image = UIImage(named: "ball")
@@ -634,7 +692,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.fifthGameImageView.image = UIImage(named: "ball")
@@ -643,8 +701,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.fifthGameImageView.image != nil {
@@ -667,7 +731,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.fourthGameImageView.image == UIImage(named: "close") && aux?.sixthGameImageView.image == UIImage(named: "close") {
                 
                 aux?.fifthGameImageView.image = UIImage(named: "close")
@@ -682,7 +746,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.firstGameImageView.image == UIImage(named: "close") && aux?.nineGameImageView.image == UIImage(named: "close") {
                 
                 aux?.fifthGameImageView.image = UIImage(named: "close")
@@ -697,7 +761,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.thirdGameImageView.image == UIImage(named: "close") && aux?.seventhGameImageView.image == UIImage(named: "close") {
                 
                 aux?.fifthGameImageView.image = UIImage(named: "close")
@@ -712,7 +776,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.fifthGameImageView.image = UIImage(named: "close")
@@ -720,9 +784,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
     @objc func sixthViewClicked() {
@@ -751,7 +821,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.thirdGameImageView.image == UIImage(named: "ball") && aux?.nineGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.sixthGameImageView.image = UIImage(named: "ball")
@@ -766,7 +836,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.sixthGameImageView.image = UIImage(named: "ball")
@@ -775,8 +845,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.sixthGameImageView.image != nil {
@@ -799,7 +875,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.thirdGameImageView.image == UIImage(named: "close") && aux?.nineGameImageView.image == UIImage(named: "close") {
                 
                 aux?.sixthGameImageView.image = UIImage(named: "close")
@@ -814,7 +890,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.sixthGameImageView.image = UIImage(named: "close")
@@ -822,9 +898,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
     @objc func seventhViewClicked() {
@@ -853,7 +935,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.fourthGameImageView.image == UIImage(named: "ball") && aux?.firstGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.seventhGameImageView.image = UIImage(named: "ball")
@@ -868,7 +950,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.eightGameImageView.image == UIImage(named: "ball") && aux?.nineGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.seventhGameImageView.image = UIImage(named: "ball")
@@ -883,7 +965,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.seventhGameImageView.image = UIImage(named: "ball")
@@ -892,8 +974,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.seventhGameImageView.image != nil {
@@ -916,7 +1004,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.fourthGameImageView.image == UIImage(named: "close") && aux?.firstGameImageView.image == UIImage(named: "close") {
                 
                 aux?.seventhGameImageView.image = UIImage(named: "close")
@@ -931,7 +1019,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.eightGameImageView.image == UIImage(named: "close") && aux?.nineGameImageView.image == UIImage(named: "close") {
                 
                 aux?.seventhGameImageView.image = UIImage(named: "close")
@@ -946,7 +1034,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.seventhGameImageView.image = UIImage(named: "close")
@@ -954,9 +1042,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
     @objc func eightViewClicked() {
@@ -985,7 +1079,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.fifthGameImageView.image == UIImage(named: "ball") && aux?.secondGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.eightGameImageView.image = UIImage(named: "ball")
@@ -1000,7 +1094,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.eightGameImageView.image = UIImage(named: "ball")
@@ -1009,8 +1103,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.eightGameImageView.image != nil {
@@ -1033,7 +1133,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.fifthGameImageView.image == UIImage(named: "close") && aux?.secondGameImageView.image == UIImage(named: "close") {
                 
                 aux?.eightGameImageView.image = UIImage(named: "close")
@@ -1048,7 +1148,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.eightGameImageView.image = UIImage(named: "close")
@@ -1056,9 +1156,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
     @objc func nineViewClicked() {
@@ -1087,7 +1193,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.eightGameImageView.image == UIImage(named: "ball") && aux?.seventhGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.nineGameImageView.image = UIImage(named: "ball")
@@ -1102,7 +1208,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else if aux?.sixthGameImageView.image == UIImage(named: "ball") && aux?.thirdGameImageView.image == UIImage(named: "ball") {
                     
                     aux?.nineGameImageView.image = UIImage(named: "ball")
@@ -1117,7 +1223,7 @@ class HomeVC: UIViewController {
                     print("Player 1 Win!")
                     
                     return
-               
+                    
                 } else {
                     
                     aux?.nineGameImageView.image = UIImage(named: "ball")
@@ -1126,8 +1232,14 @@ class HomeVC: UIViewController {
                     
                 }
                 
+                if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                    
+                    self.drawGameAction()
+                    
+                }
+                
             }
-       
+            
         } else if player1 == false {
             
             if aux?.nineGameImageView.image != nil {
@@ -1150,7 +1262,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.eightGameImageView.image == UIImage(named: "close") && aux?.seventhGameImageView.image == UIImage(named: "close") {
                 
                 aux?.nineGameImageView.image = UIImage(named: "close")
@@ -1165,7 +1277,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else if aux?.sixthGameImageView.image == UIImage(named: "close") && aux?.thirdGameImageView.image == UIImage(named: "close") {
                 
                 aux?.nineGameImageView.image = UIImage(named: "close")
@@ -1180,7 +1292,7 @@ class HomeVC: UIViewController {
                 print("Player 2 Win!")
                 
                 return
-           
+                
             } else {
                 
                 aux?.nineGameImageView.image = UIImage(named: "close")
@@ -1188,17 +1300,15 @@ class HomeVC: UIViewController {
                 player1 = true
                 
             }
-        
+            
+            if homeView.firstGameImageView.image != nil && homeView.secondGameImageView.image != nil && homeView.thirdGameImageView.image != nil && homeView.fourthGameImageView.image != nil && homeView.fifthGameImageView.image != nil && homeView.sixthGameImageView.image != nil && homeView.seventhGameImageView.image != nil && homeView.eightGameImageView.image != nil && homeView.nineGameImageView.image != nil {
+                
+                self.drawGameAction()
+                
+            }
+            
         }
-     
+        
     }
     
 }
-
-
-
-
-
-
-
-
