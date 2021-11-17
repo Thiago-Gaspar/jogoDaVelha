@@ -5,7 +5,6 @@
 //  Created by Thiago Gaspar on 15/05/21.
 //
 
-
 import UIKit
 
 class HomeView: UIView {
@@ -61,7 +60,6 @@ class HomeView: UIView {
         
         let width = view.frame.size.width
         let height = view.frame.size.height
-        
         
         //------------------------- Hashtag -----------------------------
 

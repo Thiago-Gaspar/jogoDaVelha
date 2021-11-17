@@ -10,6 +10,7 @@ import UIKit
 enum AssetsColor : String {
     case grayTextField
     case blueDefault
+    case darkBlue
 }
 
 extension UIColor{
