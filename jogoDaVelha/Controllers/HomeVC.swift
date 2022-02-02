@@ -62,7 +62,6 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
         
-        
         //-------------------------------- Navigation Bar ---------------------------------------
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
