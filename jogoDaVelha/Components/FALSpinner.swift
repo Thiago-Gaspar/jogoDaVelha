@@ -82,7 +82,7 @@ class FALSpinner {
         loader.contentMode = UIView.ContentMode.center
         loader.isHidden = true
         loader.hidesWhenStopped = true
-        loader.style = UIActivityIndicatorView.Style.whiteLarge
+        loader.style = UIActivityIndicatorView.Style.large
         
         background = UIView(frame: CGRect(x: 0,y: 0, width: width, height: height))
         background.backgroundColor = UIColor.black

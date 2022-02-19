@@ -8,8 +8,9 @@ target 'jogoDaVelha' do
   # Pods for jogoDaVelha
 
 pod 'IQKeyboardManagerSwift' 
-pod 'SideMenu'
 pod 'SDWebImage'
+pod 'FirebaseAuth'
+pod 'GoogleSignIn'
 
 post_install do |installer|   
   installer.pods_project.build_configurations.each do |config|

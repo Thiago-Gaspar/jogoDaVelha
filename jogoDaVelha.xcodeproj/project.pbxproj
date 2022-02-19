@@ -18,6 +18,7 @@
 		552790F726A196AB00BE6F7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 552790F926A196AB00BE6F7E /* Localizable.strings */; };
 		5539B76F264FFE4F0024C9A6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5539B76E264FFE4F0024C9A6 /* HomeView.swift */; };
 		5539B771264FFE5D0024C9A6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5539B770264FFE5D0024C9A6 /* HomeVC.swift */; };
+		559D967227BDED4F001A0778 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 559D967127BDED4F001A0778 /* GoogleService-Info.plist */; };
 		55C2389126796A8B00B82BE3 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2389026796A8B00B82BE3 /* StartVC.swift */; };
 		55C2389326796AD100B82BE3 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2389226796AD100B82BE3 /* StartView.swift */; };
 		55E30F3C262B3BBB0046D9BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E30F3B262B3BBB0046D9BC /* LoginView.swift */; };
@@ -44,6 +45,7 @@
 		552790FA26A196C800BE6F7E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5539B76E264FFE4F0024C9A6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5539B770264FFE5D0024C9A6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		559D967127BDED4F001A0778 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		55C2389026796A8B00B82BE3 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		55C2389226796AD100B82BE3 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		55E30F3B262B3BBB0046D9BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		5525BE24262B24E0002F7A25 /* jogoDaVelha */ = {
 			isa = PBXGroup;
 			children = (
+				559D967127BDED4F001A0778 /* GoogleService-Info.plist */,
 				5525BE25262B24E0002F7A25 /* AppDelegate.swift */,
 				5525BE27262B24E0002F7A25 /* SceneDelegate.swift */,
 				552790F426A1968100BE6F7E /* Translate */,
@@ -249,6 +252,7 @@
 			files = (
 				5525BE35262B24E1002F7A25 /* LaunchScreen.storyboard in Resources */,
 				552790F726A196AB00BE6F7E /* Localizable.strings in Resources */,
+				559D967227BDED4F001A0778 /* GoogleService-Info.plist in Resources */,
 				5525BE32262B24E1002F7A25 /* Assets.xcassets in Resources */,
 				5525BE2D262B24E0002F7A25 /* Main.storyboard in Resources */,
 			);

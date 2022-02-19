@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>752934348654-bf8te2ieh0jlclagbllr7el2ma68ngkt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.752934348654-bf8te2ieh0jlclagbllr7el2ma68ngkt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCzXr3EILh7_Xf2Q6Uczdxl2PO0iGkK8bA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>752934348654</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>thiagogaspar.jogoDaVelha</string>
+	<key>PROJECT_ID</key>
+	<string>jogo-da-velha-1644282804390</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jogo-da-velha-1644282804390.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:752934348654:ios:903a3efea7599e5105037f</string>
+</dict>
+</plist>

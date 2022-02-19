@@ -27,9 +27,6 @@ class StartView: UIView {
         super.init(frame: view.frame);
         
         view.backgroundColor = .white
-        
-        let width = view.frame.size.width
-        let height = view.frame.size.height
                
         //------------------------- Logo Image Label -----------------------------
 

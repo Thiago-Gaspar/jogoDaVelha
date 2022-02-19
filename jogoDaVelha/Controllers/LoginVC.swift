@@ -5,8 +5,10 @@
 //  Created by Thiago Gaspar on 17/04/21.
 //
 
-
 import UIKit
+import GoogleSignIn
+import FirebaseAuth
+import FirebaseCore
 
 class LoginVC: UIViewController {
     
@@ -18,6 +20,8 @@ class LoginVC: UIViewController {
     
     var loginView : LoginView!
     
+    var googleButton : GIDSignInButton!
+    
     /* **************************************************************************************************
      **
      **  MARK: View
@@ -28,6 +32,13 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         loginView = LoginView(view: view, parent: self)
+        
+        googleButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: view.frame.width*0.7, height: 50))
+        googleButton.frame.origin.y = loginView.loginButton.frame.origin.y + loginView.loginButton.frame.height + 20
+        googleButton.center.x = view.frame.width/2
+        googleButton.addTarget(self, action: #selector(setupGoogle), for: .touchUpInside)
+        
+        view.addSubview(googleButton)
         
         //------------------------------ Targets --------------------------//
         
@@ -49,6 +60,60 @@ class LoginVC: UIViewController {
         super.viewWillDisappear(animated)
         
         self.navigationController?.navigationBar.isHidden = true
+        
+    }
+    
+    @objc func setupGoogle() {
+        
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
+
+          if let error = error {
+            // ...
+            return
+          }
+
+          guard
+            let authentication = user?.authentication,
+            let idToken = authentication.idToken
+          else {
+            return
+          }
+
+          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                         accessToken: authentication.accessToken)
+
+          // ...
+            
+            Auth.auth().signIn(with: credential) { authResult, error in
+                if let error = error {
+                    let authError = error as NSError
+                    if authError.code == AuthErrorCode.secondFactorRequired.rawValue {
+                        // The user is a multi-factor user. Second factor challenge is required.
+                        let resolver = authError
+                            .userInfo[AuthErrorUserInfoMultiFactorResolverKey] as! MultiFactorResolver
+                        var displayNameString = ""
+                        for tmpFactorInfo in resolver.hints {
+                            displayNameString += tmpFactorInfo.displayName ?? ""
+                            displayNameString += " "
+                        }
+                        GenericAlert.genericAlert(self, title: "DEU RUIM!", message: "", actions: [])
+                    } else {
+                        GenericAlert.genericAlert(self, title: "\(error.localizedDescription)", message: "", actions: [])
+                        return
+                    }
+                    // ...
+                    return
+                }
+                print("DEU BOM!")
+            }
+            
+        }
         
     }
     
