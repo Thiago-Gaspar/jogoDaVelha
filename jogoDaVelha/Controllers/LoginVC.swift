@@ -33,7 +33,7 @@ class LoginVC: UIViewController {
         
         loginView = LoginView(view: view, parent: self)
         
-        googleButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: view.frame.width*0.7, height: 50))
+        googleButton = GIDSignInButton(frame: CGRect(x: 0, y: 0, width: view.frame.width*0.9, height: 50))
         googleButton.frame.origin.y = loginView.loginButton.frame.origin.y + loginView.loginButton.frame.height + 20
         googleButton.center.x = view.frame.width/2
         googleButton.addTarget(self, action: #selector(setupGoogle), for: .touchUpInside)
